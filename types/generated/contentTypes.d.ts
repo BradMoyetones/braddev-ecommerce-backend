@@ -368,6 +368,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -376,6 +377,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     categoryName: Attribute.String;
     slug: Attribute.UID<'api::category.category', 'categoryName'>;
     mainImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -444,7 +446,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     active: Attribute.Boolean & Attribute.DefaultTo<true>;
     price: Attribute.Decimal;
     origin: Attribute.Enumeration<['Africa', 'Asia', 'America', 'Europa']>;
-    taste: Attribute.Enumeration<['sweet', 'citric']>;
+    taste: Attribute.Enumeration<['sweet', 'citric', 'salty']>;
     isFeatured: Attribute.Boolean;
     category: Attribute.Relation<
       'api::product.product',

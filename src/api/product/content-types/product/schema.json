@@ -53,7 +53,8 @@
       "type": "enumeration",
       "enum": [
         "sweet",
-        "citric"
+        "citric",
+        "salty"
       ]
     },
     "isFeatured": {
